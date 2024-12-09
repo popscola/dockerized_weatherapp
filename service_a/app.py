@@ -8,8 +8,8 @@ def index():
     data = None
     if request.method == 'POST':
         city = request.form.get('cityName')
-        state = request.form.get('stateName', 'ON')  # Use default value if key is missing
-        country = request.form.get('countryName', 'Canada')  # Use default value if key is missing
+        state = request.form.get('stateName', 'ON') 
+        country = request.form.get('countryName', 'Canada')  
         data = get_weather(city, state, country)
 
     return render_template('index.html', data=data)
